@@ -1,0 +1,46 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Name')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-name" data-rule="required" class="form-control" maxlength="30" name="row[name]" type="text" value="{$row.name|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Brand')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            {:build_radios('row[brand_id]', $brandList, $row['brand_id'])}
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Number')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-number" data-rule="required" data-source="" class="form-control" name="row[number]" type="number" min="1" value="{$row.number|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Device_id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-device_id" data-rule="required" data-source="" class="form-control" name="row[device_id]" type="text" value="{$row.device_id|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Device_secret')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-device_secret" data-rule="required" class="form-control" name="row[device_secret]" type="text" value="{$row.device_secret|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Card')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-card" data-rule="" class="form-control" placeholder="没有可不填" name="row[card]" type="text" value="{$row.card|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>
